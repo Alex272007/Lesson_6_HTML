@@ -109,7 +109,6 @@ a {
 
 .category__catalogs {
     flex: 1 1 calc(33.333% - 20px);
-    width: 360px;
     min-height: 260px;
     cursor: pointer;
 }
@@ -127,9 +126,9 @@ a {
 }
 
 .category__catalog-4 {
-    background-image: url(./img/middleBlock4.png);
     flex-basis: 100%;
     min-height: 180px;
+    background-image: url(./img/middleBlock4.png);
 }
 
 .category__catalog-darkening {
@@ -436,13 +435,11 @@ a {
     }
 
     .category__catalogs {
-        width: 232px;
         min-height: 167px;
     }
 
     .category__catalog-4 {
-        width: 734px;
-        height: 116px;
+        min-height: 116px;
     }
 
     .productCard {
@@ -501,11 +498,17 @@ a {
     .banner {
         justify-content: center;
         align-items: center;
+        min-width: 375px;
+        min-height: 363px;
+    }
+
+    .banner__info {
+        white-space: nowrap;
     }
 
     .banner__content {
+        padding-left: 0;
         max-width: 263px;
-
     }
 
     .banner__content-title {
@@ -527,13 +530,14 @@ a {
     }
 
     .category__catalogs {
-        width: 343px;
-        height: 247px;
+        flex-basis: 343px;
+        min-height: 247px;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
-    .category_catalog-4 {
-        width: 343px;
-        height: 111px;
+    .category__catalog-4 {
+        min-height: 111px;
 
     }
 
@@ -567,14 +571,25 @@ a {
     .subscription__img {
         background-repeat: no-repeat;
         background-size: cover;
-
     }
 
     .subscription__bg {
-        padding: 64px 0 140px;
+        padding: 50px 0 110px;
         flex-direction: column;
         align-items: center;
         gap: 48px;
+        width: 610px;
+        height: 550px;
+    }
+
+    .subscription__content {
+        width: 343px;
+        height: 194px;
+    }
+
+    .subscribe {
+        width: 341px;
+        height: 123px;
     }
 
     .footer__container {
