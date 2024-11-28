@@ -12,19 +12,19 @@
       <nav class="navigation container">
         <div class="navigation__left">
           <a href="#"><img src="./img/logoHeader.png" alt="Logo" /></a>
-          <button>
+          <button class="navigation__search">
             <a href="#"><img src="./img/iconHeader1.svg" alt="Search" /></a>
           </button>
         </div>
         <div class="navigation__right">
-          <button>
+          <button class="navigation__choice">
             <a href="#"> <img src="./img/iconHeader2.svg" alt="Choice" /> </a>
           </button>
 
-          <button class="hide">
+          <button class="navigation__profile hide">
             <a href="#"><img src="./img/iconHeader3.svg" alt="Profile" /> </a>
           </button>
-          <button class="hide">
+          <button class="navigation__basket hide">
             <a href="#"><img src="./img/iconHeader4.svg" alt="Basket" /> </a>
           </button>
         </div>
@@ -32,7 +32,8 @@
     </header>
 
     <main class="main">
-      <section class="banner">
+      <section class="banner banner__menu">
+        <div class="banner__menu"></div>
         <div class="banner__img hide">
           <img src="./img/top.png" alt="Top" />
         </div>
@@ -73,7 +74,7 @@
           </div>
         </div>
         <div class="category__catalogs category__catalog-4">
-          <div class="category__catalog-darkening">
+          <div class="category__catalog__darkening-4">
             <div class="category__catalog-text">
               <p>LUXIROUS & TRENDY</p>
               <h3 class="category__catalog-colortext">ACCESORIES</h3>
@@ -213,7 +214,7 @@
 
       <section class="subscription">
         <div class="subscription__img">
-          <div class="subscription__bg">
+          <div class="subscription__bg container">
             <div class="subscription__content">
               <div class="subscription__foto">
                 <img src="./img/Intersect.png" alt="Smile" />
@@ -239,7 +240,9 @@
                 <button class="subscribe__btn-text">
                   <form action="#">Enter Your Email</form>
                 </button>
-                <button class="subscribe__btn-btn">Subscribe</button>
+                <button class="subscribe__btn-btn" type="submit">
+                  <form action="#">Subscribe</form>
+                </button>
               </div>
             </div>
           </div>
@@ -252,12 +255,12 @@
           <div class="footer__brend-text">
             <h5>© 2022 Brand All Rights Reserved.</h5>
           </div>
-        </div>
-        <div class="footer__social_media">
-          <a href=""><img src="./img/footer_icon1.png" alt="Facebook" /></a>
-          <a href=""><img src="./img/footer_icon2.png" alt="Instagram" /></a>
-          <a href=""><img src="./img/footer_icon3.png" alt="Pinterest" /></a>
-          <a href=""><img src="./img/footer_icon4.png" alt="Twitter" /></a>
+          <div class="footer__social_media">
+            <a href=""><img src="./img/footer_icon1.png" alt="Facebook" /></a>
+            <a href=""><img src="./img/footer_icon2.png" alt="Instagram" /></a>
+            <a href=""><img src="./img/footer_icon3.png" alt="Pinterest" /></a>
+            <a href=""><img src="./img/footer_icon4.png" alt="Twitter" /></a>
+          </div>
         </div>
       </div>
     </footer>
