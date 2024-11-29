@@ -24,7 +24,7 @@ a {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    overflow: hidden
+    /* overflow: hidden */
 }
 
 .header {
@@ -129,7 +129,6 @@ a {
 
 .category {
     margin-bottom: 96px;
-
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -137,7 +136,14 @@ a {
 
 .category__catalogs {
     flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 260px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     cursor: pointer;
 }
 
@@ -263,14 +269,19 @@ a {
 .productCard__btm-bot {
     padding: 15px 39px 14px 39px;
     border: 1px solid #FF6A6A;
+    display: block;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    background: #FFFFFF;
+    background: none;
     color: #F26376;
-    text-align: center;
-    align-items: center;
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+.productCard__btm-bot:hover {
+    background-color: #F26376;
+    color: #FFFFFF;
 }
 
 .information {
@@ -367,7 +378,7 @@ a {
 
 .subscribe {
     min-width: 557px;
-    min-height: 142px;
+    height: 142px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -388,7 +399,7 @@ a {
 
 .subscribe__btn {
     min-width: 356px;
-    min-height: 49px;
+    height: 49px;
     display: flex;
 }
 
@@ -422,11 +433,11 @@ a {
 }
 
 .footer {
+    padding: 24px 0;
     background: #222222;
 }
 
 .footer__container {
-    padding: 24px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -439,11 +450,28 @@ a {
     color: #FBFBFB;
 }
 
-.footer__social_media {
+.footer__social-list {
     display: flex;
-    justify-content: center;
-    gap: 7px;
+    gap: 8px;
 }
+
+.footer__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer__social-link:hover {
+    color: #fff;
+    background-color: #f16d7f;
+}
+
 
 @media(min-width: 768px) and (max-width: 1024px) {
     .container {
@@ -630,13 +658,11 @@ a {
         flex-direction: column;
         align-items: center;
         gap: 73px;
-
     }
 
     .subscription__content {
         min-width: 320px;
         height: 194px;
-
     }
 
     .subscription__text {
@@ -646,7 +672,7 @@ a {
     }
 
     .subscribe {
-        min-width: 341px;
+        min-width: 343px;
         height: 123px;
         gap: 22px;
     }
@@ -670,13 +696,12 @@ a {
         height: 47px;
     }
 
-    .footer__container {
-        justify-content: center;
-        align-items: center;
+    .footer {
+        padding: 43px 0 9px;
     }
 
-    .footer__brend {
-        display: flex;
+    .footer__container {
         flex-direction: column-reverse;
+        gap: 40px;
     }
 }
