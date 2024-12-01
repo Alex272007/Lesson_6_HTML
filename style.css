@@ -24,7 +24,6 @@ a {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    /* overflow: hidden */
 }
 
 .header {
@@ -58,6 +57,11 @@ a {
     border: none;
 }
 
+
+.navigation__search, .navigation__choice, .navigation__profile, .navigation__basket {
+    cursor: pointer;
+}
+
 .navigation__basket {
     position: relative;
 }
@@ -78,7 +82,7 @@ a {
     display: flex;
     align-items: center;
     background: #F1E4E6;
-    width: 100vw;
+    width: 100%;
 }
 
 .banner__menu {
@@ -195,30 +199,30 @@ a {
     font-size: 24px;
 }
 
-.product {
+.products {
     margin-bottom: 60px;
 }
 
-.productCard__launch {
+.products__launch {
     text-align: center;
     font-weight: 400;
 }
 
-.productCard__launch-featured {
+.products__launch-featured {
     margin-bottom: 6px;
     font-size: 30px;
     line-height: 36px;
     color: #222222;
 }
 
-.productCard__launch-week {
+.products__launch-week {
     font-size: 14px;
     line-height: 17px;
     color: #9F9F9F;
     margin-bottom: 48px;
 }
 
-.productCard {
+.product {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -226,18 +230,65 @@ a {
     margin-bottom: 48px;
 }
 
-.productCard__card {
+.product__card {
     background: #F8F8F8;
-
 }
 
-.productCard__content {
-    padding: 24px 30px 24px 16px;
+.product__card-image {
+    position: relative;
+}
+
+.product__card-bg {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 56, 56, 0.86);
+    opacity: 0;
+    transition: opacity 0.3s ease;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.productCard__content-name {
+.product__card-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.product__card-image:hover .product__card-bg {
+    opacity: 1;
+}
+
+.product__add {
+    width: 139px;
+    height: 44px;
+    background: none;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.product__card-bg button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.product__content {
+    padding: 24px 29px 24px 16px;
+}
+
+.product__content-name {
     margin-bottom: 13px;
     font-weight: 400;
     font-size: 13px;
@@ -245,7 +296,7 @@ a {
     color: #000000;
 }
 
-.productCard__content-description {
+.product__content-description {
     margin-bottom: 16px;
     font-weight: 300;
     font-size: 14px;
@@ -253,20 +304,20 @@ a {
     color: #5D5D5D;
 }
 
-.productCard__content-price {
+.product__content-price {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color: #F16D7F;
 }
 
-.productCard__btm {
+.product__btm {
     display: flex;
     justify-content: center;
     margin-bottom: 95px;
 }
 
-.productCard__btm-bot {
+.product__btm-bot {
     padding: 15px 39px 14px 39px;
     border: 1px solid #FF6A6A;
     display: block;
@@ -279,7 +330,7 @@ a {
     transition: all 0.3s;
 }
 
-.productCard__btm-bot:hover {
+.product__btm-bot:hover {
     background-color: #F26376;
     color: #FFFFFF;
 }
@@ -294,8 +345,7 @@ a {
 }
 
 .information__detailed {
-    min-width: 360px;
-    height: 134px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -332,6 +382,7 @@ a {
     background-image: url(./img/subscribe_image.png);
     background-size: cover;
     background-repeat: no-repeat;
+
 }
 
 .subscription__img {
@@ -398,7 +449,7 @@ a {
 }
 
 .subscribe__btn {
-    min-width: 356px;
+    min-width: 341px;
     height: 49px;
     display: flex;
 }
@@ -473,7 +524,7 @@ a {
 }
 
 
-@media(min-width: 768px) and (max-width: 1024px) {
+@media(min-width: 767px) and (max-width: 1025px) {
     .container {
         max-width: 736px;
     }
@@ -508,7 +559,7 @@ a {
         min-height: 116px;
     }
 
-    .productCard {
+    .product {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -542,7 +593,7 @@ a {
     }
 }
 
-@media(min-width: 320px) and (max-width: 767px) {
+@media(min-width: 320px) and (max-width: 768px) {
     .container {
         max-width: 344px;
     }
@@ -613,14 +664,14 @@ a {
         min-height: 111px;
     }
 
-    .productCard {
+    .product {
         display: flex;
         flex-direction: column;
         gap: 16px;
         margin-bottom: 41px;
     }
 
-    .productCard__card {
+    .product__card {
         min-width: 320px;
         height: 560px;
     }
@@ -692,8 +743,16 @@ a {
     }
 
     .subscribe__btn {
-        min-width: 341px;
+        width: 341px;
         height: 47px;
+    }
+
+    .subscribe__btn-text {
+        min-width: 233px;
+    }
+
+    .subscribe__btn-btn {
+        min-width: 96px;
     }
 
     .footer {
