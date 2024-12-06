@@ -57,9 +57,12 @@ a {
     border: none;
 }
 
-
 .navigation__search, .navigation__choice, .navigation__profile, .navigation__basket {
     cursor: pointer;
+}
+
+.navigation__choice {
+    position: relative;
 }
 
 .navigation__basket {
@@ -67,8 +70,12 @@ a {
 }
 
 .navigation__basket::after {
-    content: url(./img/5.png);
+    content: url(./img/5.webp);
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 19px;
     height: 19px;
     background-color: #F16D7F;
@@ -85,17 +92,63 @@ a {
     width: 100%;
 }
 
-.banner__menu {
-    position: relative;
+.hiden {
+    display: none;
 }
 
-.banner__menu::after {
-    width: 232px;
-    height: 630px;
-    background-color: #ffffff;
+.menu-active {
+    padding: 32px;
+    padding-left: 33px;
     position: absolute;
-    top: 0;
+    top: 74px;
     right: 0;
+    width: 232px;
+    height: 634px;
+    background: #FFFFFF;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+
+.menu-close {
+    color: #000;
+    background: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-active__all {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-heading {
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.menu-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F16D7F;
+    margin-bottom: 12px;
+}
+
+.menu-list {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.menu-list a {
+    color: #6F6E6E;
 }
 
 .banner__img {
@@ -152,20 +205,20 @@ a {
 }
 
 .category__catalog-1 {
-    background-image: url(./img/middleBlock1.png);
+    background-image: url(./img/middleBlock1.webp);
 }
 
 .category__catalog-2 {
-    background-image: url(./img/middleBlock2.png);
+    background-image: url(./img/middleBlock2.webp);
 }
 
 .category__catalog-3 {
-    background-image: url(./img/middleBlock3.png);
+    background-image: url(./img/middleBlock3.webp);
 }
 
 .category__catalog-4 {
     min-height: 180px;
-    background-image: url(./img/middleBlock4.png);
+    background-image: url(./img/middleBlock4.webp);
 }
 
 .category__catalog-darkening {
@@ -379,7 +432,7 @@ a {
     align-items: center;
     text-align: center;
     color: #222224;
-    background-image: url(./img/subscribe_image.png);
+    background-image: url(./img/subscribe_image.webp);
     background-size: cover;
     background-repeat: no-repeat;
 
